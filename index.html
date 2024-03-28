@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Text Generator</h1>
+        <input type="number" id="numOftext" placeholder="Enter Number of text">
+        <button onclick="generate()">Generate</button>
+
+        <!-- <p class="txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> -->
+    </div>
+
+
+    
+    <script>
+        console.log("working");
+
+        const input = document.getElementById("numOftext");
+        const container=document.querySelector(".container")
+
+        const generate=()=>{
+            let numOfWords = Number(input.value);
+            console.log(numOfWords)
+
+            const p=document.createElement("p");
+            p.innerText="sample text";
+            p.setAttribute("class", "txt");
+            container.append(p)
+        }
+
+        const generateText=(n)=>{
+            let text="";
+            const letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for(let i=0; i<n; i++){
+                text += letter[i];
+            }
+            return text;
+        }
+        console.log(generateText(7))
+
+        let a = (Math.random()*26).toFixed(0)
+        console.log(a)
+    </script>
+</body>
+</html>
